@@ -1,0 +1,38 @@
+SOAL 1:
+create DATABASE myshop;
+ 
+ SOAL 2:
+ tabel users 
+create table users ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, email varchar(255) not null, password varchar(255) not null );
+
+ tabel categories
+ create table categories ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null );
+
+ tabel items
+ create table items ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, description varchar(255) not null, price int, stock int, categories_id int, FOREIGN KEY (categories_id) REFERENCES categories(id) );
+
+ SOAL 3:
+ tabel users
+ INSERT INTO users (name, email, password) VALUES ("John Doe", "john@doe.com", "john123"), ("Jane Doe", "jane@doe.com", "jenita123");
+
+ tabel categories
+ INSERT INTO categories(name) VALUES ("gadget"),("cloth"),("men"),("women"),("branded");
+
+ tabel items
+ INSERT INTO items(name,description,price,stock,categories_id) VALUES ("samsung b50", "hp keren dari merek samsung",4000000,100,1), ("uniklooh", "baju keren dari brand ternama",500000,50,2), ("imho watch", "jam tangan anak yang jujur banget",2000000,10,1);
+
+SOAL 4
+a.mengambil data users
+SELECT id,name,email FROM `users`;
+
+b.mengambil data items: 
+1. lebih dari 1000000
+  SELECT * FROM `items` WHERE price > 1000000;
+2.memiliki nama serupa(LIKE)
+SELECT * FROM `items` WHERE name LIKE "uniklo%";
+3. Menampilkan data items join dengan kategori
+SELECT items.name, items.description, items.price, items.stock, items.categories_id, categories.name AS kategori FROM items INNER JOIN categories ON items.categories_id = categories.id;
+
+SOAL 5
+mengubah data dari DATABASE
+UPDATE items SET price = 2500000 WHERE id = 1;
