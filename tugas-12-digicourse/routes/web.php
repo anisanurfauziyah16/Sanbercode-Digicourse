@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\CastsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +28,18 @@ Route::get('/table', function(){
     return view('partials.table');
 });
 
+//CRUD CASTS
+//CREATE DATA
+Route::get('/casts/create',[CastsController::class,"create"]);
+Route::post('/casts',[CastsController::class,"store"]);
 
+//R => Read Data
+Route::get('/casts',[CastsController::class,"index"]);
+Route::Get('/casts/{casts_id}', [CastsController::class,"show"]);
+
+//R => Update Data
+Route::get('/casts/{casts_id}/edit', [CastsController::class, "edit"]);
+Route::put('/casts/{casts_id}', [CastsController::class, "update"]);
+
+//D => Delete Data
+Route::delete('/casts/{casts_id}',[CastsController::class, "destray"]);
