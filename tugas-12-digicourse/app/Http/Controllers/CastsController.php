@@ -61,7 +61,7 @@ class CastsController extends Controller
           return redirect('/casts');
     }
 
-    public function destray($id){
+    public function destroy($id){
         DB::table('casts')->where('id', $id)->delete();
         return redirect('/casts');
     }

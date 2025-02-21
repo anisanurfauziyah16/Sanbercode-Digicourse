@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
- Casts page
+ Cast page
 @endsection
 @section('content')
 

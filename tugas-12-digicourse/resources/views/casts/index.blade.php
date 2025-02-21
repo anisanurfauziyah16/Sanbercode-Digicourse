@@ -1,11 +1,11 @@
 @extends('layout.master')
 
 @section('title')
- Casts page
+ Cast page
 @endsection
 @section('content')
 
-  <a href="/casts/create" class="btn btn-sm btn-primary mb-3">Add casts</a>
+  <a href="/casts/create" class="btn btn-sm btn-primary mb-3">Add cast</a>
 
   <table class="table">
     <thead>
@@ -32,7 +32,7 @@
           </tr>
         @empty
         <tr> 
-            <th scope="row">casts data is empty</th>
+            <th scope="row">cast data is empty</th>
         </tr>
        <p>No users</p>
         @endforelse

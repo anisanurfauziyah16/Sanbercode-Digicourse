@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-Edit Casts 
+Edit Cast 
 @endsection
 @section('content')
 <form action="/casts/{{$casts->id}}" method="POST">
@@ -17,7 +17,7 @@ Edit Casts
     @csrf
     @method('PUT')
     <div class="form-group">
-      <label>Casts Name</label> <br>
+      <label>Cast Name</label> <br>
       <input type="text" class="form-controlname" name="name" value="{{old('name', $casts->name)}}">
     </div>
     <div class="form-group">
